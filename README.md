@@ -6,7 +6,7 @@ password: password
 
 ## Deployed on nelify.com
 
-https://splendorous-druid-19af50.netlify.app/home
+https://rental-hub007.netlify.app/home
 
 ## Bonus Question
 
