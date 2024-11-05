@@ -1,0 +1,173 @@
+<div class="add-home">
+  <h2>Add New Home</h2>
+  <form (ngSubmit)="submitHome()">
+    <label>Title:</label>
+    <input type="text" [(ngModel)]="homeData.title" name="title" required placeholder="Home Title"/>
+
+    <label>Description:</label>
+    <textarea
+      [(ngModel)]="homeData.description"
+      name="description"
+      required placeholder="please add description"
+    ></textarea>
+
+    <label>Location:</label>
+    <input
+      type="text"
+      [(ngModel)]="homeData.location"
+      name="location"
+      required placeholder="Delhi"
+    />
+    
+      <label for="buildingType">Building Type:</label>
+      <select 
+        id="buildingType"
+        name="buildingType"
+        [(ngModel)]="homeData.buildingType"
+        required
+        
+      >
+        <option value="" disabled>Select Building Type</option>
+        <option value="Apartment">Apartment</option>
+        <option value="Building">Building</option>
+      </select>
+      
+    <br>
+    <br>
+    <div class="switch-container">
+      <label>Furnished:</label>
+      <label class="switch">
+        <input
+          type="checkbox"
+          [(ngModel)]="homeData.furnished"
+          name="furnished"
+          required
+          #furnished="ngModel"
+        />
+        <span class="slider"></span>
+      </label>
+    </div>
+    <br>
+    <label>Rent:</label>
+    <input type="number" [(ngModel)]="homeData.rent" name="rent" required placeholder="1000"/>
+    <br>
+    <hr>
+    <label>Amenities Included:</label>
+    <br />
+    <div>
+      <hr>
+      <label
+        >WiFi
+        <input
+          type="checkbox"
+          [(ngModel)]="homeData.amenities.wifi"
+          name="wifi"
+        />
+      </label>
+      <hr>
+      <label
+        >bikeparking
+        <input
+          type="checkbox"
+          [(ngModel)]="homeData.amenities.bikeparking"
+          name="bikeparking"
+        />
+      </label>
+      <hr>
+      <label
+        >Gym
+        <input
+          type="checkbox"
+          [(ngModel)]="homeData.amenities.gym"
+          name="gym"
+        />
+      </label>
+      <hr>
+      <label
+        >swimming pool
+        <input
+          type="checkbox"
+          [(ngModel)]="homeData.amenities.swimmingpool"
+          name="swimmingpool"
+        />
+      </label>
+      <hr>
+      <label
+        >power Backup
+        <input
+          type="checkbox"
+          [(ngModel)]="homeData.amenities.powerbackup"
+          name="powerBackup"
+        />
+      </label>
+      <hr>
+      <label
+        >Elevator
+        <input
+          type="checkbox"
+          [(ngModel)]="homeData.amenities.elevator"
+          name="elevator"
+        />
+      </label>
+      <hr>
+      <label
+        >car parking
+        <input
+          type="checkbox"
+          [(ngModel)]="homeData.amenities.carparking"
+          name="carparking"
+        />
+      </label>
+      <hr>
+      <label
+        >water Heater
+        <input
+          type="checkbox"
+          [(ngModel)]="homeData.amenities.waterheater"
+          name="waterheater"
+        />
+      </label>
+      <hr>
+      <label
+        >club house
+        <input
+          type="checkbox"
+          [(ngModel)]="homeData.amenities.clubhouse"
+          name="clubhouse"
+        />
+      </label>
+      <hr>
+    </div>
+
+    <label>Image URL:</label>
+    <input type="text" [(ngModel)]="homeData.image" name="image" placeholder="https://angular.io/assets/images/tutorials/faa/ian-macdonald-W8z6aiwfi1E-unsplash.jpg"/>
+
+    <button type="button" (click)="previewHome()">Preview</button>&nbsp; &nbsp;
+    <button type="submit">Submit</button>
+  </form>
+
+  <div *ngIf="showPreview" class="preview">
+    <h3>Preview</h3>
+    <img [src]="homeData.image || 'default-image.jpg'" alt="Home Image" />
+    <p>
+      <strong>{{ homeData.title }}</strong>
+    </p>
+    <p>{{ homeData.description }}</p>
+    <p>Location: {{ homeData.location }}</p>
+    <p>Type: {{homeData.buildingType}}</p>
+    <p>Furnished: {{homeData.furnished}}</p>
+    <p>Rent: {{ homeData.rent }}</p>
+    <p>
+      Amenities:
+      <span *ngIf="homeData.amenities.wifi">WiFi, </span>
+      <span *ngIf="homeData.amenities.bikeparking">bikeparking, </span>
+      <span *ngIf="homeData.amenities.gym">Gym, </span>
+      <span *ngIf="homeData.amenities.swimmingpool">swimmingpool, </span>
+      <span *ngIf="homeData.amenities.carparking">car parking, </span>
+      <span *ngIf="homeData.amenities.clubhouse">clubhouse, </span>
+      <span *ngIf="homeData.amenities.elevator">Elevator, </span>
+      <span *ngIf="homeData.amenities.powerbackup">powerBackup, </span>
+      <span *ngIf="homeData.amenities.waterheater">waterheater </span>
+    </p>
+  </div>
+</div>

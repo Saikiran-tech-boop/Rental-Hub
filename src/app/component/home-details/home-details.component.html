@@ -1,0 +1,35 @@
+<div class="home-details">
+  <h2>{{ home?.title }}</h2>
+  <hr>
+  <img [src]="home?.image" alt="{{ home?.title }}" />
+  <hr>
+  <p>Description: {{ home?.description }}</p><hr>
+  <p>Location: {{ home?.location }}</p><hr>
+  <p>Type: {{home?.buildingType}}</p><hr>
+  <p>Furnished: {{home?.furnished}}</p><hr>
+  <p>Rent: {{ home?.rent }}</p><hr>
+  <p>Amenities: 
+    
+    <span *ngFor="let amenity of home?.amenities | keyvalue">
+      <hr>
+      <br>
+      {{ amenity.key }}: {{ amenity.value ? 'Yes' : 'No' }}
+      
+      <br>
+    </span>
+  </p>
+  
+  <h3>Comments</h3>
+  <hr>
+  <br>
+  <div class="comments">
+    <div *ngFor="let comment of home.comments">
+      <p><strong>{{ comment.username }} -<em>{{comment.text}}</em></strong></p>
+      <hr>
+    </div>
+    <input type="text" [(ngModel)]="newComment" placeholder="Add a comment" />
+    <button (click)="addComment()">Submit</button> &nbsp; &nbsp; <button routerLink="/">Back to Home</button>
+  </div>
+  <br>
+  
+</div>

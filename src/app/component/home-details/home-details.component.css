@@ -1,0 +1,17 @@
+.home-details {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .home-details img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .comments {
+    margin-top: 20px;
+  }
