@@ -1,5 +1,16 @@
-I have implemented bonus Question in RentalHub Assigment.
+##Credentials to login rental-hub
 
+name: saikiran
+email: saikiran@nagarro.com 
+password: password
+
+##Deployed on nelify.com
+
+https://splendorous-druid-19af50.netlify.app/home
+
+##Bonus Question
+
+I have implemented bonus Question in RentalHub Assigment.
 
 # RentalHub
 
